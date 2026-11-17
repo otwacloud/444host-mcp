@@ -1,0 +1,59 @@
+{
+  "name": "@otwa/444host-mcp",
+  "version": "1.8.0",
+  "description": "Model Context Protocol server for 444host.com — manage VPS, hosting, domains, billing, tickets and webhooks, and place real orders, from Claude and other MCP-capable AI tools.",
+  "license": "MIT",
+  "homepage": "https://444host.com/developers",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/otwacloud/444host-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/otwacloud/444host-mcp/issues"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "444host",
+    "vps",
+    "cloud",
+    "hosting",
+    "claude",
+    "cursor",
+    "ai"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "bin": {
+    "444host-mcp": "dist/index.js",
+    "444host-mcp-http": "dist/http/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "type-check": "tsc -p tsconfig.json --noEmit",
+    "prepublishOnly": "pnpm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.21.0",
+    "express": "^4.21.0",
+    "zod": "4.3.6"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.2"
+  }
+}
